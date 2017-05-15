@@ -1,0 +1,41 @@
+#!/usr/bin/expect
+
+set timeout -1
+
+set version [lindex $argv 0]
+if {$version == ""} {
+    set version "17.0"
+}
+
+spawn /root/quartus/setup.sh
+
+expect "Press \\\[Enter\\\] to continue:" { send "\r" }
+expect "Press \\\[Enter\\\] to continue:" { send "\r" }
+
+puts "----------------------------------"
+
+set count 82;
+while {$count > 0 } {
+    expect "Press \\\[Enter\\\] to continue:" { send "\r" }
+    puts "\n\ncount : $count\n\n";
+    set count [expr $count-1];
+}
+
+expect "Do you accept this license? \\\[y/n\\\]" { send "y\r" }
+expect "Installation directory \\\[/root/intelFPGA_lite/$version\\\]:" { send "/opt/intelFPGA_lite/$version\r" }
+expect "Quartus Prime Lite Edition (Free)  \\\[Y/n\\\] :" { send "y\r" }
+expect "Quartus Prime Lite Edition (Free)  - Quartus Prime Help" { send "n\r" }
+expect "Quartus Prime Lite Edition (Free)  - Devices \\\[Y/n\\\] :" { send "y\r" }
+expect "Quartus Prime Lite Edition (Free)  - Devices - Arria II" { send "y\r" }
+expect "Quartus Prime Lite Edition (Free)  - Devices - Cyclone" { send "y\r" }
+expect "Quartus Prime Lite Edition (Free)  - Devices - Cyclone" { send "y\r" }
+expect "Quartus Prime Lite Edition (Free)  - Devices - Cyclone" { send "y\r" }
+expect "Quartus Prime Lite Edition (Free)  - Devices - MAX II/V" { send "y\r" }
+expect "Quartus Prime Lite Edition (Free)  - Devices - MAX 10 FPGA" { send "y\r" }
+expect "ModelSim - Intel FPGA Starter Edition (Free)" { send "n\r" }
+expect "ModelSim - Intel FPGA Edition" { send "n\r" }
+expect "Is the selection above correct? \\\[Y/n\\\]:" { send "y\r" }
+expect "Create shortcuts on Desktop \\\[Y/n\\\]:" { send "n\r" }
+expect "Launch Quartus Prime Lite Edition \\\[Y/n\\\]:" { send "n\r" }
+expect "Provide your feedback at" { send "n\r" }
+expect eof

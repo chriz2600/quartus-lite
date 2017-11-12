@@ -16,8 +16,8 @@ ADD files/.profile /root/
 # install quartus prime
 RUN mkdir -p /root/quartus && \
     cd /root/quartus && \
-    wget http://download.altera.com/akdlm/software/acdsinst/17.0std/595/ib_tar/Quartus-lite-17.0.0.595-linux.tar && \
-    tar xvf Quartus-lite-17.0.0.595-linux.tar && \
-    /root/setup 17.0 && \
+    wget http://download.altera.com/akdlm/software/acdsinst/17.1std/590/ib_tar/Quartus-lite-17.1.0.590-linux.tar && \
+    tar xvf Quartus-lite-17.1.0.590-linux.tar && \
+    /root/setup 17.1 && \
     rm -rf /root/quartus
 

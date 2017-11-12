@@ -4,7 +4,7 @@ set timeout -1
 
 set version [lindex $argv 0]
 if {$version == ""} {
-    set version "17.0"
+    set version "17.1"
 }
 
 spawn /root/quartus/setup.sh

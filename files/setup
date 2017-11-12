@@ -14,7 +14,7 @@ expect "Press \\\[Enter\\\] to continue:" { send "\r" }
 
 puts "----------------------------------"
 
-set count 82;
+set count 88;
 while {$count > 0 } {
     expect "Press \\\[Enter\\\] to continue:" { send "\r" }
     puts "\n\ncount : $count\n\n";

@@ -4,7 +4,7 @@ set -e
 
 DOCKER_TARGET=chriz2600
 IMAGE_NAME=quartus-lite
-IMAGE_TAG=17.0
+IMAGE_TAG=17.1
 
 docker build -t ${DOCKER_TARGET}/${IMAGE_NAME}:${IMAGE_TAG} .
 docker tag ${DOCKER_TARGET}/${IMAGE_NAME}:${IMAGE_TAG} ${DOCKER_TARGET}/${IMAGE_NAME}:latest

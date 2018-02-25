@@ -32,6 +32,7 @@ expect "Quartus Prime Lite Edition (Free)  - Devices - Cyclone" { send "y\r" }
 expect "Quartus Prime Lite Edition (Free)  - Devices - Cyclone" { send "y\r" }
 expect "Quartus Prime Lite Edition (Free)  - Devices - MAX II/V" { send "y\r" }
 expect "Quartus Prime Lite Edition (Free)  - Devices - MAX 10 FPGA" { send "y\r" }
+expect "Quartus Prime Lite Edition (Free)  - Quartus Prime Update 17.1.1.593" { send "y\r" }
 expect "ModelSim - Intel FPGA Starter Edition (Free)" { send "n\r" }
 expect "ModelSim - Intel FPGA Edition" { send "n\r" }
 expect "Is the selection above correct? \\\[Y/n\\\]:" { send "y\r" }

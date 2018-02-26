@@ -1,0 +1,28 @@
+#!/usr/bin/expect
+
+set timeout -1
+
+set version [lindex $argv 0]
+if {$version == ""} {
+    set version "17.1"
+}
+
+spawn /root/quartus/components/QuartusSetup-17.1.1.593-linux.run
+
+expect "Press \\\[Enter\\\] to continue:" { send "\r" }
+expect "Press \\\[Enter\\\] to continue:" { send "\r" }
+
+puts "----------------------------------"
+
+set count 88;
+while {$count > 0 } {
+    expect "Press \\\[Enter\\\] to continue:" { send "\r" }
+    puts "\n\ncount : $count\n\n";
+    set count [expr $count-1];
+}
+
+expect "Do you accept this license? \\\[y/n\\\]" { send "y\r" }
+expect "\\\[1\\\] Specify installation to update" { send "1\r" }
+expect "Specify installation to update" { send "/opt/intelFPGA_lite/$version\r" }
+expect "Allow patches to be uninstalled" { send "y\r" }
+expect eof

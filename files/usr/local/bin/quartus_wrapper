@@ -1,4 +1,7 @@
 #!/bin/bash -l
 
+CMD="$1"
+shift
+
 cd /build
-quartus_sh "$@"
+$CMD "$@"

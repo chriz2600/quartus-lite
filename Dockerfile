@@ -13,6 +13,7 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
 ADD files/setup /root/
 ADD files/setup.2 /root/
 ADD files/.profile /root/
+ADD files/usr/local/bin/quartus /usr/local/bin/quartus
 
 # install quartus prime
 RUN mkdir -p /root/quartus && \

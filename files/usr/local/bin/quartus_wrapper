@@ -4,4 +4,10 @@ CMD="$1"
 shift
 
 cd /build
+
+# set up remote 
+if [ -n "$SERVER" -a -n "$PASSWD" ] ; then
+    jtagconfig --addserver "$SERVER" "$PASSWD"
+fi
+
 $CMD "$@"

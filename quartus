@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run --rm -it -e "JTAG_SERVER=$JTAG_SERVER" -e "JTAG_PASSWD=$JTAG_PASSWD" -v $(pwd):/build chriz2600/quartus-lite:latest /usr/local/bin/quartus_wrapper "$@"

@@ -1,0 +1,2 @@
+
+export PATH=/opt/intelFPGA_lite/18.0/quartus/sopc_builder/bin/:/opt/intelFPGA_lite/18.0/quartus/bin/:$PATH

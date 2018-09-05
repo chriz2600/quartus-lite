@@ -21,3 +21,5 @@ RUN mkdir -p /root/quartus && \
     wget http://download.altera.com/akdlm/software/acdsinst/18.0std/614/ib_tar/Quartus-lite-18.0.0.614-linux.tar && \
     tar xvf Quartus-lite-18.0.0.614-linux.tar && \
     /root/setup 18.0 && rm -rf /root/quartus && rm -rf /root/setup
+
+ADD files/.profile.addons /root/

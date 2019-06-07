@@ -20,6 +20,7 @@ RUN mkdir -p /root/quartus && \
     cd /root/quartus && \
     wget http://download.altera.com/akdlm/software/acdsinst/18.1std/625/ib_tar/Quartus-lite-18.1.0.625-linux.tar && \
     tar xvf Quartus-lite-18.1.0.625-linux.tar && \
-    /root/setup 18.1 && rm -rf /root/quartus && rm -rf /root/setup
+    /root/setup 18.1 && rm -rf /root/quartus && rm -rf /root/setup && \
+    rm /opt/intelFPGA_lite/18.1/quartus/linux64/libboost_system.so
 
 ADD files/.profile.addons /root/

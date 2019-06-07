@@ -3,7 +3,7 @@
 CMD="$1"
 shift
 
-cd /build
+test -d /build && cd /build
 
 # set up remote 
 if [ -n "$JTAG_SERVER" -a -n "$JTAG_PASSWD" ] ; then

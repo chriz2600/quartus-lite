@@ -1,24 +1,20 @@
 #!/usr/bin/expect
 
-#
-# currently not used
-#
-
 set timeout -1
 
 set version [lindex $argv 0]
 if {$version == ""} {
-    set version "17.1"
+    set version "18.1"
 }
 
-spawn /root/quartus/components/QuartusSetup-17.1.1.593-linux.run
+spawn /root/quartus/QuartusSetup-18.1.1.646-linux.run
 
 expect "Press \\\[Enter\\\] to continue:" { send "\r" }
 expect "Press \\\[Enter\\\] to continue:" { send "\r" }
 
 puts "----------------------------------"
 
-set count 88;
+set count 45;
 while {$count > 0 } {
     expect "Press \\\[Enter\\\] to continue:" { send "\r" }
     puts "\n\ncount : $count\n\n";
@@ -26,7 +22,7 @@ while {$count > 0 } {
 }
 
 expect "Do you accept this license? \\\[y/n\\\]" { send "y\r" }
-expect "\\\[1\\\] Specify installation to update" { send "1\r" }
-expect "Specify installation to update" { send "/opt/intelFPGA_lite/$version\r" }
-expect "Allow patches to be uninstalled" { send "y\r" }
+expect "Please choose an option \\\[1\\\]" { send "1\r" }
+expect "Specify installation to update \\\[\\\]:" { send "/opt/intelFPGA_lite/$version\r" }
+expect "Allow patches to be uninstalled \\\[Y/n\\\]:" { send "n\r" }
 expect eof

@@ -9,16 +9,20 @@ docker:
   services:
     - name: docker:dind
   script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME --build-arg VERSION="=$CI_COMMIT_REF_NAME" --build-arg DOCKER_TAG="$CI_COMMIT_REF_NAME" .
-    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
-    - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME $CI_REGISTRY_IMAGE:latest
-    - docker push $CI_REGISTRY_IMAGE:latest
-    - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
-    - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
-    - docker tag $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:latest
-    - docker push $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
-    - docker push $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:latest
+    - |
+      echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+      echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin
+
+      docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME --build-arg VERSION="=$CI_COMMIT_REF_NAME" --build-arg DOCKER_TAG="$CI_COMMIT_REF_NAME" .
+
+      docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME $CI_REGISTRY_IMAGE:latest
+      docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
+      docker tag $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:latest
+
+      docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+      docker push $CI_REGISTRY_IMAGE:latest
+      docker push $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
+      docker push $DOCKER_HUB_USERNAME/$CI_PROJECT_NAME:latest
   only:
     - tags
   tags:

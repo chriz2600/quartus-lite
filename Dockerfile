@@ -22,12 +22,12 @@ ADD files/usr/local/bin/quartus_wrapper /usr/local/bin/quartus_wrapper
 # install quartus prime
 RUN mkdir -p /root/quartus && \
     cd /root/quartus && \
-    wget http://download.altera.com/akdlm/software/acdsinst/18.1std/625/ib_tar/Quartus-lite-18.1.0.625-linux.tar && \
+    wget --progress=bar http://download.altera.com/akdlm/software/acdsinst/18.1std/625/ib_tar/Quartus-lite-18.1.0.625-linux.tar && \
     tar xvf Quartus-lite-18.1.0.625-linux.tar && \
     /root/setup 18.1 && rm -rf /root/quartus && rm -rf /root/setup && \
     mkdir -p /root/quartus && \
     cd /root/quartus && \
-    wget http://download.altera.com/akdlm/software/acdsinst/18.1std.1/646/update/QuartusSetup-18.1.1.646-linux.run && \
+    wget --progress=bar http://download.altera.com/akdlm/software/acdsinst/18.1std.1/646/update/QuartusSetup-18.1.1.646-linux.run && \
     chmod 755 QuartusSetup-18.1.1.646-linux.run && \
     /root/setup.2 18.1 && rm -rf /root/quartus && rm -rf /root/setup.2
 

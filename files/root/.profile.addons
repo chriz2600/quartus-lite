@@ -1,2 +1,12 @@
+export Q_INST_DIR=/opt/intelFPGA_lite/19.1
 
-export PATH=/opt/intelFPGA_lite/19.1/quartus/sopc_builder/bin/:/opt/intelFPGA_lite/19.1/quartus/bin/:/opt/intelFPGA_lite/19.1/nios2eds/:/opt/intelFPGA_lite/19.1/nios2eds/bin/:/opt/intelFPGA_lite/19.1/nios2eds/sdk2/bin/:$PATH
+export QUARTUS_ROOTDIR=${Q_INST_DIR}/quartus
+export SOPC_KIT_NIOS2=${Q_INST_DIR}/nios2eds
+
+export PATH=${Q_INST_DIR}/quartus/sopc_builder/bin/:$PATH
+export PATH=${Q_INST_DIR}/quartus/bin/:$PATH
+export PATH=${Q_INST_DIR}/nios2eds/:$PATH
+export PATH=${Q_INST_DIR}/nios2eds/bin/:$PATH
+export PATH=${Q_INST_DIR}/nios2eds/sdk2/bin/:$PATH
+export PATH=${Q_INST_DIR}/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/:$PATH
+export PATH=${Q_INST_DIR}/quartus/linux64/gnu/:$PATH

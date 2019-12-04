@@ -1,2 +1,2 @@
 
-export PATH=/opt/intelFPGA_lite/19.1/quartus/sopc_builder/bin/:/opt/intelFPGA_lite/19.1/quartus/bin/:$PATH
+export PATH=/opt/intelFPGA_lite/19.1/quartus/sopc_builder/bin/:/opt/intelFPGA_lite/19.1/quartus/bin/:/opt/intelFPGA_lite/19.1/nios2eds/:/opt/intelFPGA_lite/19.1/nios2eds/bin/:/opt/intelFPGA_lite/19.1/nios2eds/sdk2/bin/:$PATH

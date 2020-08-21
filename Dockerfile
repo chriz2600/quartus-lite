@@ -16,6 +16,7 @@ ADD files/ /
 # install quartus prime
 RUN mkdir -p /root/quartus && \
     cd /root/quartus && \
-    wget -q http://download.altera.com/akdlm/software/acdsinst/19.1std/670/ib_tar/Quartus-lite-19.1.0.670-linux.tar && \
-    tar xvf Quartus-lite-19.1.0.670-linux.tar && \
-    /root/setup 19.1 && rm -rf /root/quartus && rm -rf /root/setup*
+    wget -q http://download.altera.com/akdlm/software/acdsinst/20.1std/711/ib_tar/Quartus-lite-20.1.0.711-linux.tar && \
+    tar xvf Quartus-lite-20.1.0.711-linux.tar && \
+    /root/quartus/components/QuartusLiteSetup-20.1.0.711-linux.run --mode unattended --installdir /opt/intelFPGA_lite/20.1 --disable-components quartus_help,modelsim_ase,modelsim_ae --accept_eula 1 && \
+    rm -rf /root/quartus && rm -rf /root/setup*

@@ -1,4 +1,4 @@
-export Q_INST_DIR=/opt/intelFPGA_lite/19.1
+export Q_INST_DIR=/opt/intelFPGA_lite/20.1
 
 export QUARTUS_ROOTDIR=${Q_INST_DIR}/quartus
 export SOPC_KIT_NIOS2=${Q_INST_DIR}/nios2eds

@@ -14,8 +14,9 @@ RUN echo "deb [check-valid-until=no] http://cdn-fastly.deb.debian.org/debian jes
 ADD files/ /
 
 # install quartus prime
+# 19.1.0 http://download.altera.com/akdlm/software/acdsinst/19.1std/670/ib_tar/Quartus-lite-19.1.0.670-linux.tar
 RUN mkdir -p /root/quartus && \
     cd /root/quartus && \
-    wget -q http://download.altera.com/akdlm/software/acdsinst/19.1std/670/ib_tar/Quartus-lite-19.1.0.670-linux.tar && \
-    tar xvf Quartus-lite-19.1.0.670-linux.tar && \
-    /root/setup 19.1 && rm -rf /root/quartus && rm -rf /root/setup*
+    wget -q http://download.altera.com/akdlm/software/acdsinst/20.1std/711/ib_tar/Quartus-lite-20.1.0.711-linux.tar && \
+    tar xvf Quartus-lite-20.1.0.711-linux.tar && \
+    /root/setup 20.1 && rm -rf /root/quartus && rm -rf /root/setup*
